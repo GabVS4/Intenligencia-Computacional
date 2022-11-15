@@ -42,7 +42,7 @@ somaAcuracia = 0;
 for epoca = 1 : 10 % Seta 10 épocas
 
     [classes, amostras] = size(X);
-    [outputClasses, ~] = size(D);
+    [numClassesSaidas, ~] = size(D);
 
     qtdAmostrasTeste = round(amostrasTeste * amostras);
 
@@ -53,7 +53,7 @@ for epoca = 1 : 10 % Seta 10 épocas
     
     %Remove 30% das amostras de X_treino e as coloca em Y_teste
     X_teste = zeros(classes, qtdAmostrasTeste);
-    Y_teste = zeros(outputClasses, qtdAmostrasTeste);
+    Y_teste = zeros(numClassesSaidas, qtdAmostrasTeste);
     
     for i = 1 : qtdAmostrasTeste
         X_teste(:, i) = X_treino(:, i);
@@ -77,8 +77,8 @@ for epoca = 1 : 10 % Seta 10 épocas
     acuracia = acertosEmTeste / amostrasDeTeste;   
 
     somaAcuracia = somaAcuracia + acuracia;
-    fprintf('Acurácia Época %d: %f\n', i, acuracia);
 
+    fprintf('Acurácia da %d° Época: %f\n', epoca, acuracia);
 end
 
 fprintf('Acurácia Média: %f\n', (somaAcuracia/10));
