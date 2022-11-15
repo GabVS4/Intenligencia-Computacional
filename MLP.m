@@ -39,10 +39,10 @@ amostrasTeste = 0.3;
 somaAcuracia = 0;
 
 %% EPOCAS:
-for epoca = 1 : 10 % Seta 10 épocas
+[classes, amostras] = size(X);
+[numClassesSaidas, ~] = size(D);
 
-    [classes, amostras] = size(X);
-    [numClassesSaidas, ~] = size(D);
+for epoca = 1 : 10 % Seta 10 épocas
 
     qtdAmostrasTeste = round(amostrasTeste * amostras);
 
@@ -81,4 +81,4 @@ for epoca = 1 : 10 % Seta 10 épocas
     fprintf('Acurácia da %d° Época: %f\n', epoca, acuracia);
 end
 
-fprintf('Acurácia Média: %f\n', (somaAcuracia/10));
+fprintf('Média das Acurácias: %f\n: %f\n', (somaAcuracia/10));
