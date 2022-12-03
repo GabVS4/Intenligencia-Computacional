@@ -63,6 +63,7 @@ end
 [~, melhorId] = max(melhorCaminhoPeso);
 fprintf("Melhor caminho:\n");
 melhorCaminho(melhorId,:)
+fprintf("Distancia percorrida caminho: %d \n", max(1/AvaliacaoMelhorIndividuo));
 
 %% Funções
 %Gera um número aleatório no intervalo dado
